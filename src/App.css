@@ -1,0 +1,1997 @@
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  min-height: 100vh;
+  color: #142033;
+  background:
+    radial-gradient(circle at top left, rgba(60, 120, 255, 0.12), transparent 35%),
+    linear-gradient(135deg, #edf5ff 0%, #eaf9ff 100%);
+}
+
+.topbar {
+  height: 54px;
+  background: rgba(255, 255, 255, 0.86);
+  border-bottom: 1px solid #cfe1ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.brand-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #dbeafe;
+  color: #2454e8;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.topbar-right {
+  color: #2454e8;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.main {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 36px 24px 70px;
+}
+
+.hero {
+  text-align: center;
+  margin: 0 auto 34px;
+}
+
+.hero h1 {
+  margin: 0;
+  color: #3158e8;
+  font-size: 42px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.hero-line {
+  width: 78px;
+  height: 4px;
+  border-radius: 999px;
+  background: #3158e8;
+  margin: 16px auto;
+}
+
+.hero p {
+  color: #435268;
+  font-size: 17px;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) 420px;
+  gap: 26px;
+  align-items: start;
+}
+
+.left-col,
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.panel,
+.chat-panel {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #e2eaf7;
+  border-radius: 18px;
+  box-shadow: 0 16px 38px rgba(39, 76, 130, 0.12);
+}
+
+.upload-panel {
+  padding: 26px;
+}
+
+.upload-box {
+  border: 2px dashed #c8d3e2;
+  border-radius: 16px;
+  padding: 36px;
+  text-align: center;
+  background: #fbfdff;
+}
+
+.upload-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  background: #eaf2ff;
+  color: #3158e8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.upload-box h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.upload-box p {
+  margin: 0 auto 20px;
+  color: #66758b;
+  max-width: 520px;
+}
+
+.file-picker {
+  margin: 0 auto 16px;
+  max-width: 420px;
+  display: block;
+  cursor: pointer;
+}
+
+.file-picker input {
+  display: none;
+}
+
+.file-picker span {
+  display: block;
+  background: #f1f6ff;
+  border: 1px solid #cfe1ff;
+  color: #3158e8;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 650;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.primary-btn {
+  border: none;
+  background: linear-gradient(135deg, #3158e8, #1d4ed8);
+  color: white;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 18px rgba(49, 88, 232, 0.24);
+}
+
+.primary-btn:disabled,
+.chat-input button:disabled,
+.suggested-list button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.panel {
+  padding: 22px;
+}
+
+.panel-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.panel-title.compact {
+  margin-bottom: 12px;
+}
+
+.panel-title h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.panel-title p {
+  margin: 2px 0 0;
+  color: #718096;
+  font-size: 14px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.stat-blue {
+  background: #eaf2ff;
+}
+
+.stat-red {
+  background: #fff1f2;
+}
+
+.stat-yellow {
+  background: #fff7e6;
+}
+
+.stat-num {
+  font-size: 30px;
+  font-weight: 850;
+  color: #1d4ed8;
+}
+
+.stat-red .stat-num {
+  color: #dc2626;
+}
+
+.stat-yellow .stat-num {
+  color: #ca8a04;
+}
+
+.stat-label {
+  color: #5c6b81;
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+.trait-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.trait-card {
+  border: 1px solid #e4ebf5;
+  border-radius: 16px;
+  padding: 18px;
+  background: #ffffff;
+}
+
+.trait-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.trait-card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.trait-card p {
+  margin: 5px 0 0;
+  color: #55657a;
+}
+
+.small-muted {
+  font-size: 13px;
+}
+
+.badge {
+  flex-shrink: 0;
+  height: fit-content;
+  padding: 6px 11px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  border: 1px solid;
+}
+
+.badge-high {
+  background: #fff1f2;
+  color: #dc2626;
+  border-color: #fecdd3;
+}
+
+.badge-medium {
+  background: #fff7e6;
+  color: #b45309;
+  border-color: #fde68a;
+}
+
+.badge-normal {
+  background: #ecfdf5;
+  color: #047857;
+  border-color: #bbf7d0;
+}
+
+.question-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.question-chips button,
+.suggested-list button {
+  border: 1px solid #bdd5ff;
+  color: #2454e8;
+  background: #f3f7ff;
+  border-radius: 999px;
+  padding: 8px 11px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: left;
+}
+
+.question-chips button:hover,
+.suggested-list button:hover {
+  background: #e7f0ff;
+}
+
+.empty-panel {
+  text-align: center;
+  padding: 34px;
+}
+
+.empty-panel svg {
+  color: #3158e8;
+}
+
+.empty-panel h2 {
+  margin-bottom: 16px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  text-align: left;
+}
+
+.feature-grid div {
+  background: #f6f9ff;
+  border: 1px solid #e2eaf7;
+  border-radius: 14px;
+  padding: 14px;
+  color: #4a5b72;
+  font-size: 14px;
+}
+
+.warning-panel {
+  border-color: #fde68a;
+  background: #fffdf5;
+}
+
+.warning-title {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 850;
+  color: #b45309;
+  margin-bottom: 8px;
+}
+
+.warning-panel p {
+  margin: 0;
+  color: #6b5b2b;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.suggested-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.suggested-list button {
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.chat-panel {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 620px;
+}
+
+.chat-header {
+  padding: 18px 20px;
+  border-bottom: 1px solid #e5edf8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fbfdff;
+}
+
+.eyebrow {
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.chat-header h2 {
+  margin: 3px 0 0;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ready-dot {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 18px;
+  overflow-y: auto;
+  min-height: 440px;
+  background: #ffffff;
+}
+
+.message-row {
+  display: flex;
+  margin-bottom: 14px;
+}
+
+.message-row.user {
+  justify-content: flex-end;
+}
+
+.message-row.assistant {
+  justify-content: flex-start;
+}
+
+.bubble {
+  max-width: 92%;
+  border-radius: 18px;
+  padding: 12px 14px;
+  line-height: 1.45;
+  font-size: 14px;
+}
+
+.bubble.user {
+  background: #3158e8;
+  color: white;
+  border-bottom-right-radius: 6px;
+}
+
+.bubble.assistant {
+  background: #f1f5fb;
+  color: #1f2937;
+  border-bottom-left-radius: 6px;
+}
+
+.bubble-text {
+  white-space: pre-wrap;
+}
+
+.typing {
+  color: #64748b;
+}
+
+.evidence-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.evidence-card {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  background: #eaf2ff;
+  border: 1px solid #cfe1ff;
+  border-radius: 10px;
+  padding: 8px;
+  color: #2454e8;
+}
+
+.evidence-title {
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.evidence-meta {
+  color: #52657d;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.chat-input {
+  border-top: 1px solid #e5edf8;
+  padding: 13px;
+  display: flex;
+  gap: 10px;
+  background: #fbfdff;
+}
+
+.chat-input input {
+  flex: 1;
+  border: 1px solid #cfe1ff;
+  border-radius: 12px;
+  padding: 12px 13px;
+  outline: none;
+  font-size: 14px;
+}
+
+.chat-input input:focus {
+  border-color: #3158e8;
+  box-shadow: 0 0 0 3px rgba(49, 88, 232, 0.12);
+}
+
+.chat-input button {
+  border: none;
+  background: #3158e8;
+  color: white;
+  border-radius: 12px;
+  width: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+@media (max-width: 1050px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .right-col {
+    order: -1;
+  }
+
+  .chat-panel {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 680px) {
+  .main {
+    padding: 24px 14px 50px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .stats-grid,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    padding: 0 14px;
+  }
+
+  .topbar-right {
+    display: none;
+  }
+}
+
+.analysis-btn {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.analysis-list {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.analysis-heading {
+  margin: 0 0 2px;
+  font-size: 22px;
+  color: #1d4ed8;
+}
+
+.analysis-card {
+  border: 1px solid #cfe1ff;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+  padding: 18px;
+}
+
+.analysis-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.analysis-card-head h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.analysis-card-head p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.analysis-answer {
+  white-space: pre-wrap;
+  color: #253044;
+  font-size: 14px;
+  line-height: 1.55;
+  background: #ffffff;
+  border: 1px solid #e5edf8;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.analysis-evidence {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.analysis-evidence-item {
+  background: #eaf2ff;
+  border: 1px solid #cfe1ff;
+  color: #274060;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.secondary-btn {
+  border: 1px solid #bdd5ff;
+  background: #f3f7ff;
+  color: #2454e8;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.secondary-btn:hover {
+  background: #e7f0ff;
+}
+
+.secondary-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.evidence-button {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.evidence-button:hover {
+  background: #dbeafe;
+  border-color: #93c5fd;
+}
+
+.viewer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.62);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+}
+
+.viewer-modal {
+  width: min(1200px, 96vw);
+  height: min(860px, 92vh);
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+}
+
+.viewer-header {
+  height: 78px;
+  border-bottom: 1px solid #e5edf8;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fbfdff;
+}
+
+.viewer-header h2 {
+  margin: 2px 0 0;
+  font-size: 18px;
+  color: #142033;
+}
+
+.viewer-header p {
+  margin: 3px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.icon-btn {
+  border: 1px solid #dbe5f3;
+  background: white;
+  color: #1e293b;
+  border-radius: 12px;
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background: #f1f5f9;
+}
+
+.pdf-frame {
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: #f8fafc;
+}
+
+/* Supplement reference cards */
+.supplement-reference-list {
+  margin-top: 12px;
+  padding: 10px;
+  border: 1px solid rgba(59, 130, 246, 0.22);
+  border-radius: 12px;
+  background: rgba(239, 246, 255, 0.78);
+}
+
+.supplement-reference-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 3px;
+}
+
+.supplement-reference-note {
+  font-size: 11px;
+  line-height: 1.35;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.supplement-reference-card {
+  padding: 9px 10px;
+  margin-top: 8px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+}
+
+.supplement-reference-header {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.supplement-reference-rank {
+  color: #2563eb;
+  flex: 0 0 auto;
+}
+
+.supplement-reference-name {
+  overflow-wrap: anywhere;
+}
+
+.supplement-reference-meta {
+  margin-top: 3px;
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: #64748b;
+}
+
+.supplement-reference-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 7px;
+}
+
+.supplement-reference-tag {
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.supplement-reference-preview {
+  margin-top: 7px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #475569;
+}
+
+/* Generic reference cards: intake + supplement */
+.reference-list {
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(248, 250, 252, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+}
+
+.reference-list-intake {
+  background: rgba(239, 246, 255, 0.82);
+  border-color: rgba(59, 130, 246, 0.24);
+}
+
+.reference-list-supplement {
+  background: rgba(236, 253, 245, 0.82);
+  border-color: rgba(16, 185, 129, 0.24);
+}
+
+.reference-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 3px;
+}
+
+.reference-note {
+  font-size: 11px;
+  line-height: 1.35;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.reference-card {
+  padding: 9px 10px;
+  margin-top: 8px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+}
+
+.reference-header {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+  font-size: 12px;
+  font-weight: 750;
+  color: #0f172a;
+}
+
+.reference-rank {
+  color: #2563eb;
+  flex: 0 0 auto;
+}
+
+.reference-name {
+  overflow-wrap: anywhere;
+}
+
+.reference-meta {
+  margin-top: 3px;
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: #64748b;
+}
+
+.reference-values {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 7px;
+  font-size: 11px;
+  color: #334155;
+}
+
+.reference-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 7px;
+}
+
+.reference-tag {
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.reference-preview {
+  margin-top: 7px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #475569;
+}
+
+.reference-link {
+  margin-top: 7px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.reference-link a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.reference-link a:hover {
+  text-decoration: underline;
+}
+
+/* Combined official intake + product reference layer */
+.combined-reference-list {
+  margin-top: 12px;
+  padding: 11px;
+  border-radius: 14px;
+  background: rgba(239, 246, 255, 0.86);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.combined-reference-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #1e3a8a;
+  margin-bottom: 3px;
+}
+
+.combined-reference-note {
+  font-size: 11px;
+  line-height: 1.35;
+  color: #64748b;
+  margin-bottom: 9px;
+}
+
+.combined-reference-card {
+  padding: 10px;
+  margin-top: 9px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.combined-reference-header {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.combined-reference-rank {
+  color: #2563eb;
+  flex: 0 0 auto;
+}
+
+.combined-reference-name {
+  overflow-wrap: anywhere;
+}
+
+.combined-reference-meta {
+  margin-top: 3px;
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: #64748b;
+}
+
+.combined-reference-values {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #334155;
+}
+
+.combined-reference-link {
+  margin-top: 7px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.combined-reference-link a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.combined-reference-link a:hover {
+  text-decoration: underline;
+}
+
+.combined-products {
+  margin-top: 10px;
+  padding-top: 9px;
+  border-top: 1px dashed rgba(148, 163, 184, 0.45);
+}
+
+.combined-products-title {
+  font-size: 11px;
+  font-weight: 800;
+  color: #065f46;
+  margin-bottom: 7px;
+}
+
+.combined-product-card {
+  padding: 8px 9px;
+  margin-top: 7px;
+  border-radius: 10px;
+  background: rgba(236, 253, 245, 0.85);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+}
+
+.combined-product-name {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #0f172a;
+  overflow-wrap: anywhere;
+}
+
+.combined-product-meta {
+  margin-top: 3px;
+  font-size: 10px;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+.combined-product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 6px;
+}
+
+.combined-product-tag {
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #d1fae5;
+  color: #047857;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.combined-product-preview {
+  margin-top: 6px;
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: #475569;
+}
+
+/* =========================================================
+   Layout v2: chat as the main workspace
+   Goal:
+   - Chat / AI Nutrition Consultant becomes the main center-left panel
+   - Upload, report summary, suggested questions move to side/support area
+   ========================================================= */
+
+/* Overall page width */
+.app,
+.page,
+.main,
+main {
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* The app likely has a main content wrapper with one main area + aside.
+   Force it into a 2-column layout. */
+main > div,
+.main-grid,
+.content-grid,
+.dashboard-grid,
+.app-grid {
+  display: grid !important;
+  grid-template-columns: minmax(680px, 1fr) 360px !important;
+  gap: 24px !important;
+  align-items: start !important;
+}
+
+/* If the original structure has a left main section and right aside,
+   make the aside visually become the primary chat column. */
+main > div > aside {
+  order: 1 !important;
+  width: 100% !important;
+}
+
+main > div > section,
+main > div > div:not(aside) {
+  order: 2 !important;
+  width: 100% !important;
+}
+
+/* Chat card becomes big and primary */
+.ai-consultant,
+.consultant-card,
+.chat-card,
+.chat-panel,
+.chat-window,
+.chat-section,
+aside .card:last-child {
+  width: 100% !important;
+  min-height: 760px !important;
+}
+
+/* Chat body should be tall enough */
+.chat-body {
+  min-height: 560px !important;
+  max-height: 680px !important;
+  overflow-y: auto !important;
+  padding-right: 6px;
+}
+
+/* Make assistant bubbles wider in the main area */
+.message-row.assistant .bubble,
+.bubble.assistant {
+  max-width: 92% !important;
+}
+
+/* User bubble stays clean */
+.message-row.user .bubble,
+.bubble.user {
+  max-width: 86% !important;
+}
+
+/* Make the chat input sticky at bottom of the chat card if possible */
+.chat-input {
+  position: sticky;
+  bottom: 0;
+  background: inherit;
+  padding-top: 10px;
+}
+
+/* Right-side support cards become compact */
+.upload-card,
+.report-summary,
+.summary-card,
+.suggested-questions,
+.questions-card,
+.warning-card,
+main > div > section .card,
+main > div > div:not(aside) .card {
+  width: 100% !important;
+}
+
+/* Suggested questions should not dominate the page */
+.suggested-questions,
+.questions-card {
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+/* RAG analysis cards in sidebar should be compact */
+.rag-analysis,
+.analysis-card,
+.report-analysis {
+  max-height: 520px;
+  overflow-y: auto;
+}
+
+/* Upload/report summary area compact spacing */
+.report-summary,
+.summary-card {
+  margin-bottom: 16px !important;
+}
+
+/* Make evidence + reference cards fit inside chat bubble */
+.evidence-list,
+.evidence-cards,
+.combined-reference-list {
+  max-width: 100%;
+}
+
+/* =========================================================
+   Combined reference layer: answer -> evidence -> reference cards
+   ========================================================= */
+
+.combined-reference-list {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(239, 246, 255, 0.92);
+  border: 1px solid rgba(59, 130, 246, 0.28);
+}
+
+.combined-reference-title {
+  font-size: 13px;
+  font-weight: 850;
+  color: #1e3a8a;
+  margin-bottom: 3px;
+}
+
+.combined-reference-note {
+  font-size: 11px;
+  line-height: 1.35;
+  color: #64748b;
+  margin-bottom: 9px;
+}
+
+.combined-reference-card {
+  padding: 10px;
+  margin-top: 9px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.combined-reference-header {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.combined-reference-rank {
+  color: #2563eb;
+  flex: 0 0 auto;
+}
+
+.combined-reference-name {
+  overflow-wrap: anywhere;
+}
+
+.combined-reference-meta {
+  margin-top: 3px;
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: #64748b;
+}
+
+.combined-reference-values {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #334155;
+}
+
+.combined-reference-link {
+  margin-top: 7px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.combined-reference-link a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.combined-reference-link a:hover {
+  text-decoration: underline;
+}
+
+.combined-products {
+  margin-top: 10px;
+  padding-top: 9px;
+  border-top: 1px dashed rgba(148, 163, 184, 0.45);
+}
+
+.combined-products-title {
+  font-size: 11px;
+  font-weight: 850;
+  color: #065f46;
+  margin-bottom: 7px;
+}
+
+.combined-product-card {
+  padding: 8px 9px;
+  margin-top: 7px;
+  border-radius: 10px;
+  background: rgba(236, 253, 245, 0.88);
+  border: 1px solid rgba(16, 185, 129, 0.24);
+}
+
+.combined-product-name {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #0f172a;
+  overflow-wrap: anywhere;
+}
+
+.combined-product-meta {
+  margin-top: 3px;
+  font-size: 10px;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+.combined-product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 6px;
+}
+
+.combined-product-tag {
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #d1fae5;
+  color: #047857;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.combined-product-preview {
+  margin-top: 6px;
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: #475569;
+}
+
+.combined-products-empty {
+  margin-top: 9px;
+  font-size: 11px;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Responsive: single column on smaller screens */
+@media (max-width: 1100px) {
+  main > div,
+  .main-grid,
+  .content-grid,
+  .dashboard-grid,
+  .app-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  main > div > aside,
+  main > div > section,
+  main > div > div:not(aside) {
+    order: initial !important;
+  }
+
+  .chat-body {
+    min-height: 460px !important;
+    max-height: 620px !important;
+  }
+}
+
+/* =========================================================
+   Layout update:
+   1. Suggested Questions moves to the right/sidebar area
+   2. Report Summary moves higher / support panel
+   3. Trait cards collapse by default
+   4. Upload/PDF preview card becomes larger and clearer
+   ========================================================= */
+
+/* ---------- Swap Report Summary and Suggested Questions ---------- */
+
+/* On wide screens, keep chat as the main central workspace */
+main > div {
+  display: grid !important;
+  grid-template-columns: minmax(720px, 1fr) 380px !important;
+  gap: 24px !important;
+  align-items: start !important;
+}
+
+/* Left/main column should contain the chat assistant prominently */
+main > div > aside {
+  order: 1 !important;
+  width: 100% !important;
+}
+
+/* Right/support column contains upload + report summary */
+main > div > section,
+main > div > div:not(aside) {
+  order: 2 !important;
+  width: 100% !important;
+}
+
+/* Suggested questions: make it compact and move after report summary visually */
+.suggested-questions,
+.questions-card,
+[class*="suggested"],
+[class*="questions"] {
+  order: 3 !important;
+}
+
+/* Report summary should appear before suggested questions in side panel */
+.report-summary,
+.summary-card,
+[class*="report-summary"],
+[class*="summary"] {
+  order: 2 !important;
+}
+
+/* Upload block should stay at the top of side panel */
+.upload-card,
+[class*="upload"] {
+  order: 1 !important;
+}
+
+
+/* ---------- Make Upload / Preview PDF area bigger ---------- */
+
+.upload-card,
+[class*="upload-card"],
+[class*="upload"] {
+  min-height: 360px !important;
+}
+
+/* The dashed upload area */
+.upload-box,
+.upload-dropzone,
+.dropzone,
+[class*="dropzone"],
+[class*="upload-box"] {
+  min-height: 300px !important;
+  padding: 34px 28px !important;
+  border-radius: 22px !important;
+}
+
+/* Upload icon */
+.upload-box svg,
+.upload-dropzone svg,
+.dropzone svg {
+  width: 46px !important;
+  height: 46px !important;
+}
+
+/* Make preview / demo report buttons larger */
+.preview-pdf,
+.pdf-preview,
+button[aria-label*="Preview"],
+button:has(svg) {
+  min-height: 42px;
+}
+
+/* Button-like PDF preview cards */
+.pdf-card,
+.preview-card,
+.demo-report-card,
+[class*="pdf"],
+[class*="preview"] {
+  border-radius: 18px;
+}
+
+
+/* ---------- Chat main area ---------- */
+
+.chat-body {
+  min-height: 560px !important;
+  max-height: 680px !important;
+  overflow-y: auto !important;
+  padding-right: 6px;
+}
+
+.chat-input {
+  position: sticky;
+  bottom: 0;
+  background: inherit;
+  padding-top: 10px;
+}
+
+.message-row.assistant .bubble,
+.bubble.assistant {
+  max-width: 92% !important;
+}
+
+.message-row.user .bubble,
+.bubble.user {
+  max-width: 86% !important;
+}
+
+
+/* ---------- Collapse trait cards by default ---------- */
+
+/*
+  This targets the cards under Report Summary / RAG Analysis.
+  Default: only keep title + priority badge visible.
+  Click card to toggle .expanded through App.jsx event listener.
+*/
+
+.trait-card,
+.analysis-card,
+.report-trait-card,
+.finding-card,
+.rag-card {
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.trait-card:hover,
+.analysis-card:hover,
+.report-trait-card:hover,
+.finding-card:hover,
+.rag-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+}
+
+/* Hide common detail elements when collapsed */
+.trait-card:not(.expanded) .trait-result,
+.trait-card:not(.expanded) .trait-genes,
+.trait-card:not(.expanded) .trait-snps,
+.trait-card:not(.expanded) .trait-actions,
+.trait-card:not(.expanded) .trait-questions,
+.trait-card:not(.expanded) p,
+.trait-card:not(.expanded) button,
+
+.analysis-card:not(.expanded) .trait-result,
+.analysis-card:not(.expanded) .trait-genes,
+.analysis-card:not(.expanded) .trait-snps,
+.analysis-card:not(.expanded) .trait-actions,
+.analysis-card:not(.expanded) .trait-questions,
+.analysis-card:not(.expanded) p,
+.analysis-card:not(.expanded) button,
+
+.report-trait-card:not(.expanded) .trait-result,
+.report-trait-card:not(.expanded) .trait-genes,
+.report-trait-card:not(.expanded) .trait-snps,
+.report-trait-card:not(.expanded) .trait-actions,
+.report-trait-card:not(.expanded) .trait-questions,
+.report-trait-card:not(.expanded) p,
+.report-trait-card:not(.expanded) button,
+
+.finding-card:not(.expanded) .trait-result,
+.finding-card:not(.expanded) .trait-genes,
+.finding-card:not(.expanded) .trait-snps,
+.finding-card:not(.expanded) .trait-actions,
+.finding-card:not(.expanded) .trait-questions,
+.finding-card:not(.expanded) p,
+.finding-card:not(.expanded) button,
+
+.rag-card:not(.expanded) .trait-result,
+.rag-card:not(.expanded) .trait-genes,
+.rag-card:not(.expanded) .trait-snps,
+.rag-card:not(.expanded) .trait-actions,
+.rag-card:not(.expanded) .trait-questions,
+.rag-card:not(.expanded) p,
+.rag-card:not(.expanded) button {
+  display: none !important;
+}
+
+/* Keep headings and priority badges visible */
+.trait-card h1,
+.trait-card h2,
+.trait-card h3,
+.trait-card h4,
+.trait-card .priority-badge,
+.trait-card .badge,
+
+.analysis-card h1,
+.analysis-card h2,
+.analysis-card h3,
+.analysis-card h4,
+.analysis-card .priority-badge,
+.analysis-card .badge,
+
+.report-trait-card h1,
+.report-trait-card h2,
+.report-trait-card h3,
+.report-trait-card h4,
+.report-trait-card .priority-badge,
+.report-trait-card .badge,
+
+.finding-card h1,
+.finding-card h2,
+.finding-card h3,
+.finding-card h4,
+.finding-card .priority-badge,
+.finding-card .badge,
+
+.rag-card h1,
+.rag-card h2,
+.rag-card h3,
+.rag-card h4,
+.rag-card .priority-badge,
+.rag-card .badge {
+  display: initial !important;
+}
+
+/* Add click hint */
+.trait-card:not(.expanded)::after,
+.analysis-card:not(.expanded)::after,
+.report-trait-card:not(.expanded)::after,
+.finding-card:not(.expanded)::after,
+.rag-card:not(.expanded)::after {
+  content: "Click to expand";
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* Expanded cards show full content */
+.trait-card.expanded,
+.analysis-card.expanded,
+.report-trait-card.expanded,
+.finding-card.expanded,
+.rag-card.expanded {
+  cursor: pointer;
+}
+
+
+/* ---------- Reference layer cards remain inside chat answer ---------- */
+
+.combined-reference-list {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(239, 246, 255, 0.92);
+  border: 1px solid rgba(59, 130, 246, 0.28);
+}
+
+.combined-reference-title {
+  font-size: 13px;
+  font-weight: 850;
+  color: #1e3a8a;
+  margin-bottom: 3px;
+}
+
+.combined-reference-note {
+  font-size: 11px;
+  line-height: 1.35;
+  color: #64748b;
+  margin-bottom: 9px;
+}
+
+.combined-reference-card {
+  padding: 10px;
+  margin-top: 9px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.combined-reference-header {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.combined-reference-rank {
+  color: #2563eb;
+  flex: 0 0 auto;
+}
+
+.combined-reference-name {
+  overflow-wrap: anywhere;
+}
+
+.combined-reference-meta {
+  margin-top: 3px;
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: #64748b;
+}
+
+.combined-reference-values {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #334155;
+}
+
+.combined-products {
+  margin-top: 10px;
+  padding-top: 9px;
+  border-top: 1px dashed rgba(148, 163, 184, 0.45);
+}
+
+.combined-products-title {
+  font-size: 11px;
+  font-weight: 850;
+  color: #065f46;
+  margin-bottom: 7px;
+}
+
+.combined-product-card {
+  padding: 8px 9px;
+  margin-top: 7px;
+  border-radius: 10px;
+  background: rgba(236, 253, 245, 0.88);
+  border: 1px solid rgba(16, 185, 129, 0.24);
+}
+
+.combined-product-name {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #0f172a;
+  overflow-wrap: anywhere;
+}
+
+.combined-product-meta {
+  margin-top: 3px;
+  font-size: 10px;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+.combined-product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 6px;
+}
+
+.combined-product-tag {
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #d1fae5;
+  color: #047857;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.combined-product-preview {
+  margin-top: 6px;
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: #475569;
+}
+
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1100px) {
+  main > div {
+    grid-template-columns: 1fr !important;
+  }
+
+  main > div > aside,
+  main > div > section,
+  main > div > div:not(aside) {
+    order: initial !important;
+  }
+
+  .chat-body {
+    min-height: 460px !important;
+    max-height: 620px !important;
+  }
+}
+
+
+/* =========================================================
+   POLISH_UPLOAD_PREVIEW_GROUPS_V1
+   Upload compact + preview card + grouped summary collapse
+   ========================================================= */
+
+/* Make upload card normal / compact in right sidebar */
+.right-col .panel:has(.preview-card-btn),
+.right-col .upload-panel,
+.right-col .upload-card {
+  min-height: unset !important;
+}
+
+.right-col .upload-box,
+.right-col .upload-dropzone,
+.right-col .dropzone,
+.right-col [class*="dropzone"],
+.right-col [class*="upload-box"] {
+  min-height: 360px !important;
+  padding: 18px !important;
+  border-radius: 18px !important;
+}
+
+.right-col .upload-box svg,
+.right-col .upload-dropzone svg,
+.right-col .dropzone svg {
+  width: 34px !important;
+  height: 34px !important;
+}
+
+/* Stack upload actions cleanly */
+.right-col .upload-actions {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  align-items: stretch !important;
+}
+
+.right-col .upload-actions button {
+  width: 100% !important;
+}
+
+/* Preview card like the small screenshot */
+.preview-card-btn {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  padding: 12px 14px !important;
+  border: 1px solid #dbe3ef !important;
+  border-radius: 12px !important;
+  background: #f8fafc !important;
+  color: #0f172a !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  text-align: left !important;
+}
+
+.preview-card-btn svg {
+  color: #94a3b8 !important;
+  flex: 0 0 auto !important;
+}
+
+.preview-card-btn span {
+  display: flex !important;
+  flex-direction: column !important;
+  line-height: 1.2 !important;
+}
+
+.preview-card-btn strong {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+}
+
+.preview-card-btn small {
+  margin-top: 4px !important;
+  font-size: 12px !important;
+  color: #94a3b8 !important;
+}
+
+/* Summary grouped collapse */
+.trait-list {
+  gap: 12px !important;
+}
+
+.summary-group-section {
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.summary-group-section + .summary-group-section {
+  margin-top: 12px;
+}
+
+.summary-group-header {
+  list-style: none;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 14px;
+  background: #f8fbff;
+  color: #0f172a;
+  font-weight: 800;
+  border-bottom: 1px solid transparent;
+}
+
+.summary-group-header::-webkit-details-marker {
+  display: none;
+}
+
+.summary-group-section[open] .summary-group-header {
+  border-bottom-color: #e2e8f0;
+}
+
+.summary-group-header strong {
+  min-width: 28px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #eef4ff;
+  color: #2563eb;
+  font-size: 12px;
+  text-align: center;
+}
+
+.summary-group-hint {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.summary-group-list {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.summary-group-list .trait-card {
+  margin: 0 !important;
+}
+
+/* Color hint by group */
+.summary-group-high .summary-group-header strong {
+  background: #fff1f2;
+  color: #e11d48;
+}
+
+.summary-group-medium .summary-group-header strong {
+  background: #fffbeb;
+  color: #d97706;
+}
+
+.summary-group-normal .summary-group-header strong {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+/* Final compact upload tweak */
+.right-col .upload-box,
+.right-col .upload-dropzone,
+.right-col .dropzone,
+.right-col [class*="dropzone"],
+.right-col [class*="upload-box"] {
+  min-height: 220px !important;
+  padding: 10px 14px !important;
+}
+
+.right-col .upload-box svg,
+.right-col .upload-dropzone svg,
+.right-col .dropzone svg {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.right-col .upload-actions {
+  gap: 6px !important;
+}
+
+.right-col .upload-actions button {
+  min-height: 30px !important;
+  padding: 7px 10px !important;
+  font-size: 12px !important;
+}
+
+.preview-card-btn {
+  padding: 8px 10px !important;
+}
+
+.preview-card-btn svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.preview-card-btn strong {
+  font-size: 13px !important;
+}
+
+.preview-card-btn small {
+  font-size: 11px !important;
+}
