@@ -1,4 +1,6 @@
-const API_BASE = "/api";
+// const API_BASE = "/api";
+
+const API_BASE = "https://nutrition-service-dev-299155970618.northamerica-northeast1.run.app";
 
 export async function uploadReport(file) {
   const formData = new FormData();
@@ -71,6 +73,7 @@ export function getReportPdfUrl(reportId) {
 }
 
 export function getDemoPdfUrl() {
+  console.log(`${API_BASE}/demo-report`);
   return `${API_BASE}/demo-report`;
 }
 
