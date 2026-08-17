@@ -8,7 +8,8 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:8008',
+        target: 'https://nutrition-service-dev-299155970618.northamerica-northeast1.run.app',
+        // target: 'http://127.0.0.1:8008',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
