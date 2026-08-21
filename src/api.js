@@ -1,6 +1,9 @@
-// const API_BASE = "/api";
+import config from "./config";
 
-const API_BASE = "https://nutrition-service-dev-299155970618.northamerica-northeast1.run.app";
+// const API_BASE = "/api";
+const API_BASE = config.nutritionUrl;
+
+console.log("API_BASE : ",API_BASE)
 
 export async function uploadReport(file) {
   const formData = new FormData();
