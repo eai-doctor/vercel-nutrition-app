@@ -37,7 +37,7 @@ function PriorityBadge({ priority }) {
 }
 
 
-
+ 
 function ReferenceList({ title, note, references, kind }) {
   if (!Array.isArray(references) || references.length === 0) return null;
 
