@@ -1,4 +1,6 @@
 function getBase(path, envVar, localFallback) {
+
+  console.log("import.meta.env.DEV", import.meta.env.DEV);
   if (import.meta.env.DEV) {
     return localFallback.replace(/\/$/, "");
   }
